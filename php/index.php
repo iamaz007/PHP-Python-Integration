@@ -57,10 +57,11 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">PHP and Python Integration</h1>
-                <p class="lead text-muted">Recieving scrapped data from python to PHP website</p>
+                <p class="lead text-muted">Receiving scrapped data from python to PHP website</p>
                 <p>
-                    <button onclick="test()" href="#" class="btn btn-primary my-2">Load Data</button>
-
+                    <button onclick="data('women-cloths')" href="#" class="btn btn-primary my-2">Women Cloths</button>
+                    <button onclick="data('women-shoes')" href="#" class="btn btn-primary my-2">Women Shoes</button>
+                    <button onclick="data('men-cloths')" href="#" class="btn btn-primary my-2">Men Cloths</button>
                 </p>
             </div>
         </section>
@@ -69,7 +70,6 @@
             <div class="container">
 
                 <div class="row" id="data">
-
 
 
                 </div>
@@ -82,11 +82,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script>
-function test() {
+function data(dataType) {
     $.ajax({
         url: "/functions.php",
         method: "post",
-        data: 'data',
+        data: 'dataType='+dataType,
         success: function(data) {
             var res = JSON.parse(data)
             console.log(res);

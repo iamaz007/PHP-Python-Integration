@@ -79,7 +79,7 @@ def khaadi():
     # print(liste)
     return liste
 
-def getWomenData():
+def getWomenClothes():
     return [ethnic(), engine(), khaadi()]
 
 # getWomenData()

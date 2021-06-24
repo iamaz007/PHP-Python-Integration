@@ -6,7 +6,7 @@ headers = {"User-agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 
 
 def ecs():
-    url = 'https://shopecs.com/apparel/eastern-wear'
+    url = 'https://shopecs.com/women'
     page = requests.get(url, headers=headers)
 
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -34,7 +34,7 @@ def outfitter():
     print(len(titles))
     print(len(liste))
     print(len(final_new_menu))
-outfitter()
+# outfitter()
 
 def engine():
     url = 'https://engine.com.pk/collections/women-sale-1'
@@ -50,4 +50,4 @@ def engine():
     print(len(titles))
     print(len(liste))
     print(len(final_new_menu))
-engine()
+# engine()

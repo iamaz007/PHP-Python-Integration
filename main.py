@@ -3,7 +3,9 @@ from flask.json import jsonify
 import requests
 from bs4 import BeautifulSoup
 import smtplib
-from python_modules.women import *
+from python_modules.women_clothes import *
+from python_modules.women_shoes import *
+from python_modules.men_clothes import *
 
 headers = {
     "User-agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
@@ -28,10 +30,22 @@ def hello_world():
     })
 
 
-@app.route('/women',methods=['GET'])
-def women():
+@app.route('/women-cloths',methods=['GET'])
+def womenCloths():
     return jsonify({
-        'list': getWomenData()
+        'list': getWomenClothes()
+    })
+
+@app.route('/women-shoes',methods=['GET'])
+def womenShoes():
+    return jsonify({
+        'list': getWomenShoes()
+    })
+
+@app.route('/men-cloths',methods=['GET'])
+def menCloths():
+    return jsonify({
+        'list': getMenClothes()
     })
     
 
