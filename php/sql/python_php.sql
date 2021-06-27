@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 02:27 PM
+-- Generation Time: Jun 27, 2021 at 09:17 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `python_php`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+(1, 'admin', 'test@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4');
 
 -- --------------------------------------------------------
 
@@ -85,15 +105,15 @@ INSERT INTO `women_cloths` (`id`, `title`, `price`, `image`) VALUES
 (44, 'Chaman Flared Shirt', 'PKR 0', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5413.jpg'),
 (45, 'Solid Dupatta', 'PKR 2,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5413_1.jpg'),
 (46, 'Chanda Dupatta', 'PKR 2,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d5440_orange.jpg'),
-(47, 'Zar 2-Piece', 'PKR 5,000', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d5440_orange_1.jpg'),
-(48, 'Sarayu Gown 3-Piece', 'PKR 5,000', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d4565.jpg'),
-(49, 'DoodLing Tiered Dress', 'PKR 7,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d4565_1.jpg'),
-(50, 'Dotted Love', 'PKR 7,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21t4857_black.jpg'),
-(51, 'Morning Walk Top', 'PKR 3,898', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21t4857_black_1.jpg'),
-(52, 'Chamkeeli', 'PKR 2,338', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21b5543_maroon.jpg'),
-(53, 'Wood Block Tunic', 'PKR 3,898', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21b5543_maroon_1.jpg'),
-(54, 'Peepal Kurti', 'PKR 2,338', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5396_yellow.jpg'),
-(55, 'Peepal Jacquard Tunic', 'PKR 1,698', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5396_yellow_1.jpg'),
+(47, 'Sarayu Gown 3-Piece', 'PKR 5,000', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d5440_orange_1.jpg'),
+(48, 'DoodLing Tiered Dress', 'PKR 5,000', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d4565.jpg'),
+(49, 'Dotted Love', 'PKR 7,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21d4565_1.jpg'),
+(50, 'Morning Walk Top', 'PKR 7,500', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21b5543_maroon.jpg'),
+(51, 'Chamkeeli', 'PKR 3,898', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21b5543_maroon_1.jpg'),
+(52, 'Wood Block Tunic', 'PKR 2,338', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5396_yellow.jpg'),
+(53, 'Peepal Kurti', 'PKR 3,898', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5396_yellow_1.jpg'),
+(54, 'Peepal Jacquard Tunic', 'PKR 2,338', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5131.jpg'),
+(55, 'Taanka Shalwar', 'PKR 1,698', 'https://generation-static.b-cdn.net/media/catalog/product/s/2/s21w5131_1.jpg'),
 (56, 'T-shirt', 'PKR 645', 'https://pk.khaadi.com/media/catalog/product/w/t/wtsp20202_white_1_3.jpg?width=300&height=&canvas=300:&quality=80&bg-color=255,255,255&fit=bounds'),
 (57, 'Kurta', 'PKR 1,290', 'https://pk.khaadi.com/media/catalog/product/w/t/wtsp20202_white_2_4.jpg?width=300&height=&canvas=300:&quality=80&bg-color=255,255,255&fit=bounds'),
 (58, 'Kurta', 'PKR 2,090', 'https://pk.khaadi.com/media/catalog/product/c/t/ctp20208_off-white_1_7.jpg?width=300&height=&canvas=300:&quality=80&bg-color=255,255,255&fit=bounds'),
@@ -115,9 +135,28 @@ INSERT INTO `women_cloths` (`id`, `title`, `price`, `image`) VALUES
 (74, 'Kurta Dupatta', 'PKR 2,270', 'https://pk.khaadi.com/media/catalog/product/e/t/ete20320_white_1_6.jpg?width=300&height=&canvas=300:&quality=80&bg-color=255,255,255&fit=bounds'),
 (75, 'Khaas Kurta', 'PKR 3,790', 'https://pk.khaadi.com/media/catalog/product/e/t/ete20320_white_2_6.jpg?width=300&height=&canvas=300:&quality=80&bg-color=255,255,255&fit=bounds');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `women_shoes`
+--
+
+CREATE TABLE `women_shoes` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `image` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `women_cloths`
@@ -126,14 +165,32 @@ ALTER TABLE `women_cloths`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `women_shoes`
+--
+ALTER TABLE `women_shoes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `women_cloths`
 --
 ALTER TABLE `women_cloths`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
+-- AUTO_INCREMENT for table `women_shoes`
+--
+ALTER TABLE `women_shoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
