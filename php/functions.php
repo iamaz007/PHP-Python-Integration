@@ -16,7 +16,7 @@
                 $price = addslashes($temp[$i][$j]['price']);
                 $image = addslashes($temp[$i][$j]['image']);
 
-                $sql = "INSERT INTO  women_cloths (title, price, image)
+                $sql = "INSERT INTO  ".$_POST['dataType']." (title, price, image)
                 VALUES ('".$title."', '".$price."', '".$image."')";
 
                 if ($con->query($sql) === TRUE) {

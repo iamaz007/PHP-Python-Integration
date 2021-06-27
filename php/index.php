@@ -59,9 +59,9 @@
                 <h1 class="jumbotron-heading">PHP and Python Integration</h1>
                 <p class="lead text-muted">Receiving scrapped data from python to PHP website</p>
                 <p>
-                    <button onclick="data('women-cloths')" href="#" class="btn btn-primary my-2">Women Cloths</button>
-                    <button onclick="data('women-shoes')" href="#" class="btn btn-primary my-2">Women Shoes</button>
-                    <button onclick="data('men-cloths')" href="#" class="btn btn-primary my-2">Men Cloths</button>
+                    <button onclick="data('women_cloths')" href="#" class="btn btn-primary my-2">Women Cloths</button>
+                    <button onclick="data('women_shoes')" href="#" class="btn btn-primary my-2">Women Shoes</button>
+                    <button onclick="data('men_cloths')" href="#" class="btn btn-primary my-2">Men Cloths</button>
                 </p>
             </div>
         </section>

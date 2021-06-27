@@ -30,19 +30,19 @@ def hello_world():
     })
 
 
-@app.route('/women-cloths',methods=['GET'])
+@app.route('/women_cloths',methods=['GET'])
 def womenCloths():
     return jsonify({
         'list': getWomenClothes()
     })
 
-@app.route('/women-shoes',methods=['GET'])
+@app.route('/women_shoes',methods=['GET'])
 def womenShoes():
     return jsonify({
         'list': getWomenShoes()
     })
 
-@app.route('/men-cloths',methods=['GET'])
+@app.route('/men_cloths',methods=['GET'])
 def menCloths():
     return jsonify({
         'list': getMenClothes()
