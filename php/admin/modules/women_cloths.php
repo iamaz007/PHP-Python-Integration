@@ -46,7 +46,7 @@
                 </div>
             </div>
             <br>
-            <div class="row" id="data">
+            <div class="" id="data">
 
 
             </div>

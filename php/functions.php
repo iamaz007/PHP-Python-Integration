@@ -16,9 +16,10 @@
                 $title = addslashes($temp[$i][$j]['title']);
                 $price = addslashes($temp[$i][$j]['price']);
                 $image = addslashes($temp[$i][$j]['image']);
+                $brand = addslashes($temp[$i][$j]['brand']);
 
-                $sql = "INSERT INTO  ".$_POST['dataType']." (title, price, image)
-                VALUES ('".$title."', '".$price."', '".$image."')";
+                $sql = "INSERT INTO  ".$_POST['dataType']." (title, price, image, brand)
+                VALUES ('".$title."', '".$price."', '".$image."', '".$brand."')";
 
                 if ($con->query($sql) === TRUE) {
                     // echo "New record created successfully";
@@ -43,36 +44,60 @@
     }
 
     if (isset($_POST['dataReadType'])) {
-        $sql="SELECT * FROM ".$_POST['dataReadType']."";
-        $result = mysqli_query($con,$sql);
-        $count = mysqli_num_rows($result);
         $dataAppend = '';
-        if ($count > 0) {
-            while($row = mysqli_fetch_array($result)) {
-                $dataAppend .= '<div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top"
-                                        src="'.$row['image'].'"
-                                        alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">'.$row['title'].'</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                            </div>
-                                            <small class="text-muted">'.$row['price'].'</small>
+        
+        // brands
+        $brands = getBrands($con,$_POST['dataReadType']);
+        if (count($brands) > 0) {
+           for ($i=0; $i < count($brands); $i++) { 
+            $sql="SELECT * FROM ".$_POST['dataReadType']." WHERE brand = '".$brands[$i]."'";
+            $result = mysqli_query($con,$sql);
+            $count = mysqli_num_rows($result);
+            
+
+            $dataAppend .= '<h4>'.$brands[$i].'</h4><div class="row">';
+                while($row = mysqli_fetch_array($result)) {
+                    if ($brands[$i] == $row['brand']) {
+                        $dataAppend .= '<div class="col-md-4">
+                        
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top"
+                                    src="'.$row['image'].'"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">'.$row['title'].'</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                         </div>
+                                        <small class="text-muted">'.$row['price'].'</small>
                                     </div>
                                 </div>
-                            </div>';
+                            </div>
+                        </div>';
+                    }
+                    
                 }
+            $dataAppend .= '</div>';
+           }
         } else {
             $dataAppend = 'No Record found';
         }
         
 
         echo $dataAppend;
+    }
+
+    function getBrands($con, $table)
+    {
+        $sql="SELECT DISTINCT(brand) FROM ".$_POST['dataReadType']."";
+        $result = mysqli_query($con,$sql);
+        $brands = [];
+        while($row = mysqli_fetch_array($result)) {
+            array_push($brands,$row['brand']);
+        }
+        return $brands;
     }
 
     if (isset($_POST['signInBtn'])) {

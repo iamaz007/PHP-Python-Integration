@@ -29,6 +29,7 @@ def outfitters():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': img,
+                'brand':'outfitters'
             }
         )
     # print(liste)
@@ -62,6 +63,7 @@ def jj():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': img,
+                'brand':'jj'
             }
         )
     # print(liste)
@@ -69,6 +71,6 @@ def jj():
 jj()
 
 def getMenClothes():
-    return [outfitters(), jj()]
+    return [{'outfitters':outfitters()}, {'jj':jj()}]
 
 # getWomenData()

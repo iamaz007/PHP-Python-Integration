@@ -20,6 +20,7 @@ def ecs():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': sc_img[index]['data-src'],
+                'brand':'ecs'
             }
         )
     # print(liste)
@@ -44,6 +45,7 @@ def stylo():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': sc_img[index]['src'],
+                'brand':'stylo'
             }
         )
     # print(liste)

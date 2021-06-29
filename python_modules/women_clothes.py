@@ -20,6 +20,7 @@ def ethnic():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': sc_img[index].find('img')['src'],
+                'brand':'ethnic'
             }
         )
     # print(liste)
@@ -43,6 +44,7 @@ def engine():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': sc_img[index]['src'],
+                'brand':'engine'
             }
         )
     # print(liste)
@@ -74,6 +76,7 @@ def khaadi():
                 'title': sc_titles[index].get_text().strip(),
                 'price': sc_price[index].get_text().strip(),
                 'image': img,
+                'brand':'khaadi'
             }
         )
     # print(liste)
