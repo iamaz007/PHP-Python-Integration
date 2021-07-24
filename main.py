@@ -2,7 +2,6 @@ from flask import Flask
 from flask.json import jsonify
 import requests
 from bs4 import BeautifulSoup
-import smtplib
 from python_modules.women_clothes import *
 from python_modules.women_shoes import *
 from python_modules.men_clothes import *
