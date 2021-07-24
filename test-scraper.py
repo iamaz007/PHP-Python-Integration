@@ -6,15 +6,16 @@ headers = {"User-agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 
 
 def ecs():
-    url = 'https://shopecs.com/women'
+    url = 'https://www.econoco.com/pipeline-adjustable-ballet-rack-plabr'
     page = requests.get(url, headers=headers)
 
     soup = BeautifulSoup(page.content, 'html.parser')
+    
+    div = soup.find_all("div", {"class": "configurable-product__tier-price"})
 
-    titles = soup.find_all("a", {"class": "product-item-link"})
     arr = []
-    for x in range(len(titles)):
-        title = titles[x].get_text().strip()
+    for x in range(len(div)):
+        title = div[x].select('.configurable-product__sku')
         arr.append(title)
     print(arr)
 
