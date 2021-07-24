@@ -28,7 +28,6 @@ def hello_world():
         'list': arr
     })
 
-
 @app.route('/women_cloths',methods=['GET'])
 def womenCloths():
     return jsonify({
